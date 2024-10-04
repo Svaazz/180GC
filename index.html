@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QSL ANIVERSARIO GC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    canvas {
+      border: 1px solid #000;
+      margin: 20px 0;
+    }
+    .container {
+      width: 50%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Descarga tu QSL (El QSO es comprobado en nuestro log automáticamente)</h1>
+    <input type="text" id="customText" placeholder="Escribe tu mensaje aquí" maxlength="100"><br><br>
+    <button onclick="generateCard()">Generar QSL</button><br><br>
+    <canvas id="postcardCanvas" width="800" height="600"></canvas><br><br>
+    <button onclick="downloadCard()">Descargar QSL</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
