@@ -48,7 +48,7 @@ function searchForText(callsign) {
 
 // Función para generar la postal
 function generateCard() {
-  const callsign = customText.value.trim().toUpperCase();
+  callsign = customText.value.trim().toUpperCase();
   if (callsign === '') {
     alert('Por favor, introduce un distintivo de llamada.');
     return;
