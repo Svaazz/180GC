@@ -47,7 +47,7 @@ function findCallsignInLog(callsign) {
 function generateCard() {
   const callsign = customText.value.trim().toUpperCase();
   if (callsign === '') {
-    alert('Por favor, introduce un distintivo de radioaficionado.');
+    alert('Por favor, introduce un distintivo de llamada.');
     return;
   }
 
@@ -84,7 +84,7 @@ function generateCard() {
 // Función para descargar la postal
 function downloadCard() {
   const link = document.createElement('a');
-  link.download = 'postal_personalizada.png';
+  link.download = 'QSL_180GC.png';
   link.href = canvas.toDataURL('image/png');
   link.click();
 }
