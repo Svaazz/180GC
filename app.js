@@ -32,7 +32,6 @@ function searchForText(searchText) {
     } else {
         return false;
     }
-}
 
   return null;
 }
