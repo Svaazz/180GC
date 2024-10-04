@@ -9,7 +9,7 @@ let qslImage = new Image();
 fetch('log.adi')
   .then(response => response.text())
   .then(data => {
-    logData = data.replace(/\r?\n|\r/g, ' ');  // Eliminar saltos de línea 
+    logData = data.replace(/\r?\n|\r/g, '');  // Eliminar saltos de línea 
   })
   .catch(error => console.error('Error al cargar el archivo ADIF:', error));
 
