@@ -17,7 +17,7 @@ fetch('log.adi')
 qslImage.src = 'QSL.png';
 
 // Función para buscar distintivo en el log
-function searchForText(searchText) {
+function searchForText(callsign) {
     const regex = new RegExp(`<CALL:\\d+>${callsign}\\s+<BAND:\\d+>(\\S+)\\s+<QSO_DATE:\\d+>(\\d+)\\s+<TIME_ON:\\d+>(\\d+)`, 'i');
   const match = logData.match(regex);
 
