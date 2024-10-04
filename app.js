@@ -85,8 +85,8 @@ function generateCard() {
     cert = 'Certificamos que';
     ific = 'realizó el correspondiente QSO con AO180GC (ejemplo).'
     ctx.font = "30px Arial";
-    ctx.fillText(ific, x, y + 60);
-    ctx.fillText(cert, x, y - 60);
+    ctx.fillText(cert, x, y + 60);
+    ctx.fillText(ific, x, y - 60);
     
   }
 }
