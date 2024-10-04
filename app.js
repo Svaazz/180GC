@@ -20,8 +20,10 @@ qslImage.src = 'QSL.png';
 function searchForText(searchText) {
     // Convert both the bigText and searchText to uppercase for case-insensitive search
     const bigTextUpper = logData.toUpperCase();
-    const pico = '>';
-    const searchTextUpper = pico.concat(searchText.toUpperCase());
+    picoA = '>';
+    picoB = '<';
+    prev = pico.concat(searchText.toUpperCase());
+    const searchTextUpper = prev.concat(picoB);
 
     // Check if searchText is found inside bigText
     if (bigTextUpper.includes(searchTextUpper)) {
