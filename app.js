@@ -55,21 +55,19 @@ function generateCard() {
   if (!qsoDetails) {
     alert('El distintivo no está en el log. Por favor, contacta con info@example.com para más información.');
     return;
-  }
-  else
-  {
-  // Redibujar la imagen QSL
-  ctx.clearRect(0, 0, canvas.width, canvas.height);  // Limpiar el canvas
-  ctx.drawImage(qslImage, 0, 0, canvas.width, canvas.height);
-
-  // Dibujar el distintivo centrado en la postal
-  ctx.font = "40px Arial";
-  ctx.fillStyle = "white";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  const x = canvas.width / 2;
-  const y = canvas.height / 2;
-  ctx.fillText(callsign, x, y);
+  } else {
+    // Redibujar la imagen QSL
+    ctx.clearRect(0, 0, canvas.width, canvas.height);  // Limpiar el canvas
+    ctx.drawImage(qslImage, 0, 0, canvas.width, canvas.height);
+  
+    // Dibujar el distintivo centrado en la postal
+    ctx.font = "40px Arial";
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    const x = canvas.width / 2;
+    const y = canvas.height / 2;
+    ctx.fillText(callsign, x, y);
   }
 }
 
