@@ -22,7 +22,7 @@ function searchForText(searchText) {
     const bigTextUpper = logData.toUpperCase();
     picoA = '>';
     picoB = '<';
-    prev = pico.concat(searchText.toUpperCase());
+    prev = picoA.concat(searchText.toUpperCase());
     const searchTextUpper = prev.concat(picoB);
 
     // Check if searchText is found inside bigText
@@ -46,7 +46,7 @@ function generateCard() {
   const qsoDetails = searchForText(callsign);
 
   if (!qsoDetails) {
-    alert('El distintivo no está en el log. Por favor, contacta con info@example.com para más información.');
+    alert('El distintivo no está en el log. Por favor, contacte con ramon.eb7bwd@gmail.com para más información.');
     return;
   } else {
    
