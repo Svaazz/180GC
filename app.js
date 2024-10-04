@@ -18,7 +18,7 @@ qslImage.src = 'QSL.png';
 
 // Función para buscar distintivo en el log
 function searchForText(callsign) {
-    const regex = new RegExp(`<CALL:\\d+>${callsign}, 'i'`);
+    const regex = new RegExp(`<CALL:\d+>${callsign}`, 'i');
   const match = logData.match(regex);
 
   console.log("Intentando encontrar: ", callsign);
