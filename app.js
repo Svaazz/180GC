@@ -64,7 +64,6 @@ function generateCard() {
     ctx.font = "30px Arial";
     ctx.fillText(cert, x, y + 60);
     ctx.fillText(ific, x, y - 60);
-    ctx.drawImage(qslImage, 0, 0, canvas.width, canvas.height);
     
   }
 }
