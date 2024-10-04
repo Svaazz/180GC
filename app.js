@@ -9,7 +9,7 @@ let qslImage = new Image();
 fetch('log.adi')
   .then(response => response.text())
   .then(data => {
-    logData = data.replace(/\r?\n|\r/g, '');  // Eliminar saltos de línea 
+    logData = data;//.replace(/\r?\n|\r/g, '');   Eliminar saltos de línea 
   })
   .catch(error => console.error('Error al cargar el archivo ADIF:', error));
 
@@ -21,7 +21,7 @@ function searchForText(searchText) {
     // Convert both the bigText and searchText to uppercase for case-insensitive search
     const bigTextUpper = logData.toUpperCase();
     picoA = '>';
-    picoB = '<';
+    picoB = '\n   <';
     prev = picoA.concat(searchText.toUpperCase());
     const searchTextUpper = prev.concat(picoB);
 
