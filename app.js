@@ -28,13 +28,8 @@ function searchForText(searchText) {
 
     // Check if searchText is found inside bigText
     if (bigTextUpper.includes(searchTextUpper)) {
-        console.log(`Found: "${searchText}" in the log!`);
-        // Do something if the text is found
-        // Example: You can return true or trigger an action
         return true;
     } else {
-        console.log(`"${searchText}" was not found.`);
-        // You can return false or trigger another action if not found
         return false;
     }
 }
