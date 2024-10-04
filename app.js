@@ -15,10 +15,6 @@ fetch('log.adi')
 
 // Función para cargar la imagen QSL.png
 qslImage.src = 'QSL.png';
-qslImage.onload = function() {
-  // Dibujar la imagen QSL cuando se haya cargado
-  ctx.drawImage(qslImage, 0, 0, canvas.width, canvas.height);
-};
 
 // Función para buscar el distintivo en el log
 function searchForText(searchText) {
@@ -62,6 +58,7 @@ function generateCard() {
     const x = canvas.width / 2;
     const y = canvas.height / 2;
     ctx.fillText(callsign, x, y);
+    ctx.drawImage(qslImage, 0, 0, canvas.width, canvas.height);
   }
 }
 
