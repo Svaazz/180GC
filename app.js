@@ -21,24 +21,23 @@ qslImage.onload = function() {
 };
 
 // Función para buscar el distintivo en el log
-function findCallsignInLog(callsign) {
-  if (!logData) return null;  // Si no se ha cargado el log, devolver null
+function searchForText(searchText) {
+    // Convert both the bigText and searchText to uppercase for case-insensitive search
+    const bigTextUpper = logData.toUpperCase();
+    const searchTextUpper = searchText.toUpperCase();
 
-  // Regex mejorado para buscar el distintivo, banda, fecha y hora en el log (ignorando saltos de línea y espacios extra)
-  const regex = new RegExp(`<CALL:\\d+>${callsign.trim();}\\s+<BAND:\\d+>(\\S+)\\s+<QSO_DATE:\\d+>(\\d+)\\s+<TIME_ON:\\d+>(\\d+)`, 'i');
-  const match = logData.toUpperCase().includes(searchCallsign);
-
-  console.log("Intentando encontrar: ", callsign.trim(););
-  console.log("Log data: ", logData);
-  console.log("Match: ", match);
-
-  if (match) {
-    return {
-      band: match[1],   // Banda del QSO
-      date: match[2],   // Fecha del QSO
-      time: match[3]    // Hora del QSO
-    };
-  }
+    // Check if searchText is found inside bigText
+    if (bigTextUpper.includes(searchTextUpper)) {
+        console.log(`Found: "${searchText}" in the log!`);
+        // Do something if the text is found
+        // Example: You can return true or trigger an action
+        return true;
+    } else {
+        console.log(`"${searchText}" was not found.`);
+        // You can return false or trigger another action if not found
+        return false;
+    }
+}
 
   return null;
 }
@@ -51,13 +50,14 @@ function generateCard() {
     return;
   }
 
-  const qsoDetails = findCallsignInLog(callsign);
+  const qsoDetails = searchForText(callsign);
 
   if (!qsoDetails) {
     alert('El distintivo no está en el log. Por favor, contacta con info@example.com para más información.');
     return;
   }
-
+  else
+  {
   // Redibujar la imagen QSL
   ctx.clearRect(0, 0, canvas.width, canvas.height);  // Limpiar el canvas
   ctx.drawImage(qslImage, 0, 0, canvas.width, canvas.height);
@@ -70,15 +70,7 @@ function generateCard() {
   const x = canvas.width / 2;
   const y = canvas.height / 2;
   ctx.fillText(callsign, x, y);
-
-  // Formatear la fecha y la hora del QSO
-  const formattedTime = `${qsoDetails.time.slice(0, 2)}:${qsoDetails.time.slice(2, 4)}:${qsoDetails.time.slice(4, 6)}`;
-  const formattedDate = `${qsoDetails.date.slice(6, 8)}/${qsoDetails.date.slice(4, 6)}/${qsoDetails.date.slice(0, 4)}`;
-  
-  // Dibujar los detalles del QSO (hora, banda, y fecha) debajo del distintivo
-  const qsoText = `Hora: ${formattedTime} - Banda: ${qsoDetails.band} - Fecha: ${formattedDate}`;
-  ctx.font = "30px Arial";
-  ctx.fillText(qsoText, x, y + 50);
+  }
 }
 
 // Función para descargar la postal
