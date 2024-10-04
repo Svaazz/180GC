@@ -6,7 +6,7 @@ let logData = null;
 let qslImage = new Image();
 
 // Función para cargar el archivo log.adi
-fetch('../src/log.adi')
+fetch('src/log.adi')
   .then(response => response.text())
   .then(data => {
     logData = data.replace(/\r?\n|\r/g, ' ');  // Eliminar saltos de línea para facilitar la búsqueda
