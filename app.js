@@ -59,8 +59,8 @@ function generateCard() {
     const y = canvas.height / 2;
     ctx.fillText(callsign, x, y);
     // Dibujar los detalles del QSO (hora, banda, y fecha) debajo del distintivo
-    cert = `Certificamos que `;
-    ific = `realizó el correspondiente QSO con AO180GC (ejemplo).`
+    cert = 'Certificamos que';
+    ific = 'realizó el correspondiente QSO con AO180GC (ejemplo).'
     ctx.font = "30px Arial";
     ctx.fillText(cert, x, y + 60);
     ctx.fillText(ific, x, y - 60);
