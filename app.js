@@ -55,8 +55,8 @@ function generateCard() {
     ctx.drawImage(qslImage, 0, 0, canvas.width, canvas.height);
   
     // Dibujar el distintivo centrado en la postal
-    ctx.font = "40px Arial";
-    ctx.fillStyle = "white";
+    ctx.font = "80px Arial";
+    ctx.fillStyle = "orange";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     const x = canvas.width / 2;
