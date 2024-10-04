@@ -25,10 +25,10 @@ function findCallsignInLog(callsign) {
   if (!logData) return null;  // Si no se ha cargado el log, devolver null
 
   // Regex mejorado para buscar el distintivo, banda, fecha y hora en el log (ignorando saltos de línea y espacios extra)
-  const regex = new RegExp(`<CALL:\\d+>${callsign}\\s+<BAND:\\d+>(\\S+)\\s+<QSO_DATE:\\d+>(\\d+)\\s+<TIME_ON:\\d+>(\\d+)`, 'i');
+  const regex = new RegExp(`<CALL:\\d+>${callsign.trim();}\\s+<BAND:\\d+>(\\S+)\\s+<QSO_DATE:\\d+>(\\d+)\\s+<TIME_ON:\\d+>(\\d+)`, 'i');
   const match = logData.match(regex);
 
-  console.log("Intentando encontrar: ", callsign);
+  console.log("Intentando encontrar: ", callsign.trim(););
   console.log("Log data: ", logData);
   console.log("Match: ", match);
 
