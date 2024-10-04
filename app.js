@@ -6,7 +6,7 @@ let logData = null;
 let qslImage = new Image();
 
 // Función para cargar el archivo log.adi
-fetch('src/log.adi')
+fetch('https://svaazz.github.io/180GC/src/log.adi')
   .then(response => response.text())
   .then(data => {
     logData = data.replace(/\r?\n|\r/g, ' ');  // Eliminar saltos de línea para facilitar la búsqueda
@@ -14,7 +14,7 @@ fetch('src/log.adi')
   .catch(error => console.error('Error al cargar el archivo ADIF:', error));
 
 // Función para cargar la imagen QSL.png
-qslImage.src = 'src/QSL.png';
+qslImage.src = 'https://svaazz.github.io/180GC/src/QSL.png';
 qslImage.onload = function() {
   // Dibujar la imagen QSL cuando se haya cargado
   ctx.drawImage(qslImage, 0, 0, canvas.width, canvas.height);
